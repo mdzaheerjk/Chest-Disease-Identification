@@ -4,7 +4,7 @@ An end-to-end ML app that classifies chest diseases from CT scans using CNNs. It
 ## Project Preview
 
 <p align="center">
-  <img src="https://backend.krishnaik.in/media/project_banners/-chest-disease-identification-0f1ff3d3b9c72e395fc2f1749c96405b.jpg"
+  <img src="https://d14omfvx1qlabb.cloudfront.net/krishnaik.in/media/project_banners/18.png"
        alt="Project Preview"
        width="600" />
 </p>
@@ -12,7 +12,7 @@ An end-to-end ML app that classifies chest diseases from CT scans using CNNs. It
 ## System Architecture
 
 <p align="center">
-  <img src="https://backend.krishnaik.in/media/project_architecture_diagrams/diagram.jpg"
+  <img src="https://d14omfvx1qlabb.cloudfront.net/krishnaik.in/media/project_architecture_diagrams/diagram.jpg"
        alt="System Architecture"
        width="600" />
 </p>
