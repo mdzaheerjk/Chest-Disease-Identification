@@ -1,0 +1,5 @@
+[2026-09-20 00:52:44,581: INFO: common : Yaml file config/config.yaml loaded successfully]
+[2026-09-20 00:52:44,647: INFO: common : Yaml file params.yaml loaded successfully]
+[2026-09-20 00:52:44,648: INFO: common : Create directory at artifacts]
+[2026-09-20 00:52:44,648: INFO: common : Create directory at artifacts/data_ingestion]
+[2026-09-20 00:52:44,649: INFO: common : Create directory at artifacts/prepare_base_model]

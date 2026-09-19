@@ -28,17 +28,17 @@ class Training:
         )
         
         valid_datagenerator=tf.keras.preprocessing.image.ImageDataGenerator(
-            **dataflow_kwargs
+            **datagenerator_kwargs
         )
         
         self.valid_generator=valid_datagenerator.flow_from_directory(
-            directory=self.config.trained_data,
+            directory=self.config.training_data,
             subset="validation",
             shuffle=False,
             **dataflow_kwargs
         )
         
-        if self.config.params_is_argumentation:
+        if self.config.params_is_augmentation:
             train_datagenerator=tf.keras.preprocessing.image.ImageDataGenerator(
                 rotation_range=40,
                 horizontal_flip=True,
@@ -69,7 +69,8 @@ class Training:
         self.model.fit(
             self.train_generator,
             epochs=self.config.params_epochs,
-            steps_per_epoch=self.validation_steps,
+            steps_per_epoch=self.steps_per_epochs,
+            validation_steps=self.validation_steps,
             validation_data=self.valid_generator
         )
         

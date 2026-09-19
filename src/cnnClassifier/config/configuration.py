@@ -41,7 +41,7 @@ class ConfigurationManager:
             params_image_size=self.params.IMAGE_SIZE,
             params_learning_rate=self.params.LEARNING_RATE,
             params_include_top=self.params.INCLUDE_TOP,
-            parms_weights=self.params.WEIGHTS,
+            params_weights=self.params.WEIGHTS,
             params_classes=self.params.CLASSES
             )
         return prepare_base_model_config
@@ -50,7 +50,7 @@ class ConfigurationManager:
         training=self.config.training
         prepare_base_model=self.config.prepare_base_model
         params=self.params
-        training_data=os.path.join(self.config.data_ingestion_unzip_dir,"Chest-CT-Scan-data")
+        training_data=os.path.join(self.config.data_ingestion.unzip_dir,"Chest-CT-Scan-data")
         create_directories([
             Path(training.root_dir)
         ])
@@ -61,15 +61,15 @@ class ConfigurationManager:
             training_data=Path(training_data),
             params_epochs=params.EPOCHS,
             params_batch_size=params.BATCH_SIZE,
-            params_is_argumentation=params.AUGMENTATION,
+            params_is_augmentation=params.AUGMENTATION,
             params_image_size=params.IMAGE_SIZE
         )
         return training_config
     
     def get_evaluation_config(self)->EvaluationConfig:
         eval_config=EvaluationConfig(
-            path_of_model="artifacts/training.h5",
-            training_data="artifacts/data_ingestion/Chest-CT-Scan-data",
+            path_of_model=Path(self.config.training.trained_model_path),
+            training_data=Path(os.path.join(self.config.data_ingestion.unzip_dir,"Chest-CT-Scan-data")),
             mlflow_uri="https://dagshub.com/entbappy/chest-Disease-Classification-MLflow-DVC.mlflow",
             all_params=self.params,
             params_image_size=self.params.IMAGE_SIZE,

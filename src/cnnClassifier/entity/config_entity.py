@@ -27,7 +27,7 @@ class TrainingConfig:
     training_data: Path
     params_epochs: int
     params_batch_size: int
-    params_is_argumentation: bool
+    params_is_augmentation: bool
     params_image_size : list
     
 @dataclass(frozen=True)

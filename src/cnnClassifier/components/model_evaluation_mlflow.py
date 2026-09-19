@@ -17,17 +17,16 @@ class Evaluation:
         )
         
         dataflow_kwargs=dict(
-            target_size=self.config.params_batch_size[:-1],
+            target_size=self.config.params_image_size[:-1],
             batch_size=self.config.params_batch_size,
             interpolation="bilinear"
         )
         
-        valid_datageneratoe=tf.keras.preprocessing.image.ImageDataGenerator(
+        valid_datagenerator=tf.keras.preprocessing.image.ImageDataGenerator(
             **datagenerator_kwargs
         )
         
-        
-        self.valid_generator=self.valid_generator.flow_from_directory(
+        self.valid_generator=valid_datagenerator.flow_from_directory(
             directory=self.config.training_data,
             subset="validation",
             shuffle=False,
@@ -58,6 +57,6 @@ class Evaluation:
                 {"loss":self.score[0],"accuracy":self.score[1]}
             )
             if tracking_uri_type_store!="file":
-                mlflow.keras.load_model(self.model,"model",registered_model_name="VGG16Model")
+                mlflow.keras.log_model(self.model,"model",registered_model_name="VGG16Model")
             else:
                 mlflow.keras.log_model(self.model,"model")
