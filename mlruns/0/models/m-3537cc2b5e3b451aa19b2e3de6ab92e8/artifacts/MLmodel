@@ -1,0 +1,20 @@
+artifact_path: /mnt/D6A6D17EA6D15F93/AI-ML/REAL WORLD PROJECTS/MACHINE LEARNING/Chest-Disease-Identification/mlruns/0/models/m-3537cc2b5e3b451aa19b2e3de6ab92e8/artifacts
+flavors:
+  keras:
+    data: data
+    keras_backend: tensorflow
+    keras_version: 3.15.1
+    save_exported_model: false
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.keras
+    python_version: 3.12.13
+mlflow_version: 3.16.1
+model_id: m-3537cc2b5e3b451aa19b2e3de6ab92e8
+model_size_bytes: 59141907
+model_uuid: m-3537cc2b5e3b451aa19b2e3de6ab92e8
+prompts: null
+run_id: fd072f2cc51a4433a0d7187bec817a75
+utc_time_created: '2026-10-02 08:24:32.641351'
